@@ -72,7 +72,14 @@ For more detail about the linear system identification method, the reader is ref
 
 ## Nonlinear System Identification
 
+The nonlinear model is a feedforward neural ODE network that consists of three hidden layers. Both hidden layers on the outside have 16 neurons and the hyperbolic tangent activation function. The middle hidden layer is a linear layer. Linear layers can also be found at the input and output of the neural network.
+
+The target is the approximate derivative of the measurement $y(t)$ and the features are $y(t),u(t),d(t)$.
+
 For more detail about the nonlinear system identification method, the reader is referred to:
 
-- ...
+- Narendra, K.S. and Parthasarathy, K. (1990). Identification and control of dynamical systems using neural networks. IEEE Transactions on Neural Networks, 1(1), 4–27.
+- Rumelhart, D.E., Hinton, G.E., and Williams, R.J. (1986). Learning representations by back-propagating errors. Nature, 323, 533–536.
+
+
 
