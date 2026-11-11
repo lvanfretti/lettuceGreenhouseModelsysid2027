@@ -775,7 +775,7 @@ def plotTestValidation(d,u,x,y,t,yhat,ops):
         ax[ll].set_xlim(left=t[0], right=t[-1]/c)
         if ll==0:
             ax[ll].set_ylabel(r'$y_1$ (g/m$^2$)', fontsize=16)
-            ax[ll].set_title(r'comparison test scenario with linear model: model (red) and data (blue)', fontsize=16)
+            ax[ll].set_title(r'comparison test scenario with model: model (red) and data (blue)', fontsize=16)
         elif ll==1:
             ax[ll].set_ylabel(r'$y_2$ (ppm) $\cdot 10^2$', fontsize=16)
         elif ll==2:   
