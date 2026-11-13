@@ -28,7 +28,7 @@ HIDDEN_DIMS = [16,16]        # hidden layer sizes
 EPOCHS      = 200
 BATCH_SIZE  = 256
 LR          = 1e-3
-SEED        = 42
+SEED        = 23
 
 torch.manual_seed(SEED)
 np.random.seed(SEED)
@@ -213,26 +213,7 @@ ax_loss.grid(True)
 fig_loss.tight_layout()
 #fig_loss.savefig("loss_curves.png", dpi=150)
 
-# ── 10b. Simulation vs. test data (time series, 40 days) ─────────────────────
-fig_sim, axes_sim = plt.subplots(4, 1, figsize=(14, 11), sharex=True)
-fig_sim.suptitle("Euler Simulation vs. Test Data – 40 days", fontsize=13)
-
-for i, ax in enumerate(axes_sim):
-    ax.plot(t_sim, Y_true[:, i], color="steelblue", lw=1.2,
-            label="Test data")
-    ax.plot(t_sim, Y_sim[:, i],  color="tomato",    lw=1.2,
-            linestyle="--", label="NN simulation (Euler)")
-    ax.set_ylabel(f"{OUTPUT_LABELS[i]} {Y_UNITS[i]}", fontsize=10)
-    ax.legend(loc="upper right", fontsize=8)
-    ax.grid(True, alpha=0.4)
-    # Mark simulation RMSE in subplot title
-    ax.set_title(f"{OUTPUT_LABELS[i]}  –  RMSE = {sim_rmse[i]:.4g}", fontsize=10)
-
-axes_sim[-1].set_xlabel("Time (hours)")
-fig_sim.tight_layout()
-#fig_sim.savefig("simulation_vs_data.png", dpi=150)
-
-# ── 10c. Parity plots ─────────────────────────────────────────────────────────
+# ── 10b. Parity plots ─────────────────────────────────────────────────────────
 fig_par, axes_par = plt.subplots(1, 4, figsize=(14, 4))
 fig_par.suptitle("Parity Plots – Euler Simulation vs. Test Data", fontsize=13)
 
@@ -275,6 +256,3 @@ rmse_i = np.sqrt(np.mean((y - yhat)**2, axis=1))
 
 print(np.array2string(rmse_i, precision=2, suppress_small=True))
 print(np.array2string(fit_i, precision=2, suppress_small=True))
-
-
-
