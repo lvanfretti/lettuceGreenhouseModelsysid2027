@@ -26,7 +26,7 @@ DT          = 900.0          # seconds per time step
 VAL_RATIO   = 0.2            # fraction of train/val scenarios used for val
 HIDDEN_DIMS = [16,16]        # hidden layer sizes
 EPOCHS      = 200
-BATCH_SIZE  = 256
+BATCH_SIZE  = 128
 LR          = 1e-3
 SEED        = 23
 

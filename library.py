@@ -785,5 +785,5 @@ def plotTestValidation(d,u,x,y,t,yhat,ops):
             ax[ll].set_xlabel(r'Time (days)',fontsize=16)
             
             
-    #plt.savefig("TestValidation.svg", format="svg")
-    #plt.close()
+    plt.savefig("TestValidation.svg", format="svg")
+    plt.close()
